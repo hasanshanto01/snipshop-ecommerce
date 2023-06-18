@@ -22,7 +22,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar navBg px-28">
+        <div className="navbar navBG px-28">
             <div className="navbar-start">
                 <div className='flex items-center gap-1 text-lg font-bold'>
                     <img src={logo} alt="" />
