@@ -47,9 +47,9 @@ const FooterDetails = () => {
                 <Link to='/' className="link link-hover">Privacy settings</Link>
 
                 <Link to='/'>
-                    <p className='flex px-3 py-2 border border-white rounded-full'>
+                    <p className='flex items-center gap-1 px-3 py-2 border border-white rounded-full'>
                         <img src={ssIcon} alt="" />
-                        <span className='ml-1'>Download the SnipShop App</span>
+                        <span>Download the SnipShop App</span>
                     </p>
                 </Link>
 

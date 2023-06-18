@@ -1,45 +1,47 @@
 import React from 'react';
 import './Navbar.css';
+import logo from '../../../Assets/logo.png';
+import { Link } from 'react-router-dom';
+import { UserIcon, HeartIcon, ShoppingBagIcon, Bars3Icon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 const Navbar = () => {
+
+    const menuItems = <>
+        <li><Link className='p-1'>
+            <UserIcon className="h-6 w-6 text-white" />
+            Account
+        </Link></li>
+        <li><Link className='p-1'>
+            <HeartIcon className="h-6 w-6 text-white" />
+            My Items
+        </Link></li>
+        <li><Link className="indicator p-0">
+            <span className="w-0 indicator-item badge badge-warning">1</span>
+            <ShoppingBagIcon className="h-6 w-6 text-white" />
+        </Link></li>
+    </>
+
     return (
-        <div className="navbar navBg">
+        <div className="navbar navBg px-28">
             <div className="navbar-start">
-                <div className="dropdown">
-                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </label>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <a>Parent</a>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a>Item 3</a></li>
-                    </ul>
+                <div className='flex items-center gap-1 text-lg font-bold'>
+                    <img src={logo} alt="" />
+                    <p><span className='textClr1'>S</span>nip<span className='textClr2'>S</span>hop</p>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    <li><a>Item 1</a></li>
-                    <li tabIndex={0}>
-                        <details>
-                            <summary>Parent</summary>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li><a>Item 3</a></li>
-                </ul>
+            <div className="navbar-center">
+                <div className="form-control flex-row">
+                    <input type="text" placeholder="Search SnipShop.com" className="input focus:outline-none rounded-full w-[593px] h-[28px] px-14 md:w-auto" />
+                    <button className='w-[64px] h-[28px] -ml-6 rounded-full searchBtn'>
+                        <MagnifyingGlassIcon className="h-5 w-5 mx-auto text-white" />
+                    </button>
+                </div>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <ul className="menu menu-horizontal px-1 text-white items-center gap-5">
+                    {menuItems}
+                </ul>
+                <Bars3Icon className="h-6 w-6 stroke-2 text-white ml-14" />
             </div>
         </div>
     );
